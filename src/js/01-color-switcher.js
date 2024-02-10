@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let intervalId;
 
   startButton.addEventListener('click', () => {
-    startButton.disabled = true; // Wyłącz przycisk "Start"
-    stopButton.disabled = false; // Włącz przycisk "Stop"
-    intervalId = setInterval(changeBackgroundColor, 1000); // Uruchom funkcję co sekundę
+    startButton.disabled = true; // Turn off "Start"
+    stopButton.disabled = false; // Turn on "Stop"
+    intervalId = setInterval(changeBackgroundColor, 1000);
   });
 
   stopButton.addEventListener('click', () => {
-    startButton.disabled = false; // Włącz przycisk "Start"
-    stopButton.disabled = true; // Wyłącz przycisk "Stop"
-    clearInterval(intervalId); // Zatrzymaj zmianę koloru
+    startButton.disabled = false; // Turn on "Start"
+    stopButton.disabled = true; // Turn off "Stop"
+    clearInterval(intervalId);
   });
 
   function changeBackgroundColor() {
-    document.body.style.backgroundColor = getRandomHexColor(); // Ustaw losowy kolor tła
+    document.body.style.backgroundColor = getRandomHexColor();
   }
 });
