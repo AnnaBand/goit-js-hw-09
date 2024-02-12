@@ -16,7 +16,7 @@ flatpickr("#datetime-picker", {
     const selectedDate = selectedDates[0];
     const startBtn = document.querySelector("[data-start]");
     if (selectedDate < new Date()) {
-      alert("Please choose a date in the future");
+      Notiflix.Notify.failure("Please choose a date in the future");
       startBtn.disabled = true;
     } else {
       startBtn.disabled = false;
@@ -40,7 +40,7 @@ document.querySelector("[data-start]").addEventListener("click", () => {
     const difference = selectedDate - now;
     if (difference <= 0) {
       clearInterval(interval);
-      alert("Countdown finished!");
+      Notiflix.Notify.success('Countdown finished!');
       return;
     }
     const { days, hours, minutes, seconds } = convertMs(difference);
