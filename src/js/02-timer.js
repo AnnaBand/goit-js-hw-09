@@ -3,7 +3,7 @@ import flatpickr from "flatpickr";
 // Dodatkowy import stylów
 import "flatpickr/dist/flatpickr.min.css";
 
-import Notiflix from "notiflix";
+import Notiflix from 'notiflix';
 
 let interval;
 
@@ -21,7 +21,7 @@ flatpickr("#datetime-picker", {
     } else {
       startBtn.disabled = false;
     }
-    clearInterval(interval); // Zatrzymujemy aktualne odliczanie po zmianie daty
+    clearInterval(interval); // Stop the current countdown after changing the date
   },
 });
 
@@ -34,7 +34,7 @@ document.querySelector("[data-start]").addEventListener("click", () => {
     return;
   }
 
-  clearInterval(interval); // Zatrzymujemy aktualne odliczanie przed rozpoczęciem nowego
+  clearInterval(interval); // Stop the current countdown before starting a new one
   interval = setInterval(() => {
     const now = new Date();
     const difference = selectedDate - now;
